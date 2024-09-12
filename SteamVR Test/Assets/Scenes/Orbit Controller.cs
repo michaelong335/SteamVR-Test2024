@@ -25,6 +25,10 @@ public class OrbitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(orbitPivot != null)
+        {
+            this.transform.RotateAround(orbitPivot.position,Vector3.up,orbitSpeed * Time.deltaTime);
+        }
         this.transform.RotateAround(orbitPivot.position,Vector3.up,orbitSpeed * Time.deltaTime);
         this.transform.Rotate(Vector3.up,rotationSpeed * Time.deltaTime);
     }
